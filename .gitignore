@@ -47,17 +47,17 @@ wheels/
 Thumbs.db
 
 # Large dataset files (exclude actual images but keep structure)
-data/train/alert/*.jpg
-data/train/drowsy/*.jpg
-data/val/alert/*.jpg
-data/val/drowsy/*.jpg
-*.jpg
-*.png
-*.jpeg
+# data/train/alert/*.jpg
+# data/train/drowsy/*.jpg
+# data/val/alert/*.jpg
+# data/val/drowsy/*.jpg
+# *.jpg
+# *.png
+# *.jpeg
 
-# Keep model checkpoints but exclude large files
-models/*.pt
-models/*.pth
+# # Keep model checkpoints but exclude large files
+# models/*.pt
+# models/*.pth
 
 # Logs
 *.log
