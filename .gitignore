@@ -46,12 +46,18 @@ wheels/
 .DS_Store
 Thumbs.db
 
-# Data files (optional - remove if you want to include datasets)
-data/
-models/
+# Large dataset files (exclude actual images but keep structure)
+data/train/alert/*.jpg
+data/train/drowsy/*.jpg
+data/val/alert/*.jpg
+data/val/drowsy/*.jpg
 *.jpg
 *.png
 *.jpeg
+
+# Keep model checkpoints but exclude large files
+models/*.pt
+models/*.pth
 
 # Logs
 *.log
