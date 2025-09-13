@@ -1,0 +1,36 @@
+# Sample Model Information
+
+This file shows the expected model structure for the drowsiness detection system.
+
+## CNN Baseline Model
+- **File**: cnn_baseline.pt
+- **Architecture**: SmallCNN (3 conv layers + 2 FC layers)
+- **Input**: 64x64 RGB images
+- **Output**: 2 classes (alert/drowsy)
+- **Size**: ~500KB
+
+## QML Hybrid Model
+- **File**: qml_hybrid.pt
+- **Architecture**: Classical encoder + 4-qubit quantum layer + output
+- **Quantum Backend**: PennyLane default.qubit
+- **Size**: ~200KB
+
+## Training Commands
+```bash
+# Train CNN model
+python src/train.py --data data --epochs 10 --batch 32 --save models/cnn_baseline.pt
+
+# Train QML model
+python src/train_qml.py --data data --epochs 5 --batch 16 --save models/qml_hybrid.pt
+```
+
+## Usage
+```python
+import torch
+from src.models.cnn_baseline import SmallCNN
+
+# Load trained model
+model = SmallCNN(num_classes=2)
+model.load_state_dict(torch.load('models/cnn_baseline.pt'))
+model.eval()
+```
